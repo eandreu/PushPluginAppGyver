@@ -103,7 +103,7 @@ static char launchNotificationKey;
     NSLog(@"active");
 
     //zero badge
-    application.applicationIconBadgeNumber = 0;
+    application.applicationIconBadgeNumber = 15;
 
     ApplicationViewController *root = (ApplicationViewController*)[[ApplicationManager instance] currentRootViewController];
 
@@ -113,10 +113,10 @@ static char launchNotificationKey;
             PushPlugin *pushHandler = [controller getCommandInstance:@"PushPlugin"];
 
             pushHandler.notificationMessage = self.launchNotification;
-            self.launchNotification = nil;
             [pushHandler performSelectorOnMainThread:@selector(notificationReceived) withObject:pushHandler waitUntilDone:NO];
         }
     }
+	self.launchNotification = nil;
 }
 
 // The accessors use an Associative Reference since you can't define a iVar in a category
