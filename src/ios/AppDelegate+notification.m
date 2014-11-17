@@ -103,7 +103,7 @@ static char launchNotificationKey;
     NSLog(@"active");
 
     //zero badge
-    application.applicationIconBadgeNumber = 15;
+    application.applicationIconBadgeNumber = 0;
 
     ApplicationViewController *root = (ApplicationViewController*)[[ApplicationManager instance] currentRootViewController];
 
